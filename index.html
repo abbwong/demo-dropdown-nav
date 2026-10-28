@@ -4,24 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dropdown Navigation Demo</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <a href="#">Logo</a>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services &#9660;</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="inner-container flex"><!-- parent container -->
+             <a href="#">Logo</a><!-- a tage and li are children of the parent -->
+            <nav>
+                <ul class="main-menu">
+                    <li><a href="#">Home</a></li>
+                    <!-- services is the parent li element -->
+                    <li class="has-dropdown">
+                        <a href="#">Services &#9660;</a>
+                        <!-- add the child sub menu to services here -->
+                         <ul class="sub-menu">
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">Branding</a></li>
+                            <li><a href="#">UX Research</a></li>
+                            <li><a href="#">Hosting</a></li>
+                         </ul>
+                    </li><!-- &#9660 is a down arrow -->
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav> 
+        </div>
+      
     </header>
 
     <main>
-        <h1>Dropdown Navigation</h1>
-        <p>Hover over Services to open the submenu. The submenu sits on top of this content because it is absolutely positioned, so it is taken out of the normal document flow.</p>
-        <p>Try tabbing through the links with your keyboard too.</p>
+        <div class="inner-container">
+         <h1>Dropdown Navigation</h1>
+          <p>Hover over Services to open the submenu. The submenu sits on top of this content because it is absolutely positioned, so it is taken out of the normal document flow.</p>
+          <p>Try tabbing through the links with your keyboard too.</p>   
+        </div>
+        
     </main>
 </body>
 </html>

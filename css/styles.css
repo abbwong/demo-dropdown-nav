@@ -10,3 +10,85 @@ body {
   color: #1f2933;
   background-color: #f4f5f7;
 }
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 1.25rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+.inner-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header {
+  background-color: #1f2933;
+  margin-bottom: 2rem;
+}
+
+header a {
+  color: #f4f5f7;
+  text-decoration: none;  
+  padding: 1.25rem 1rem;
+  display: block;
+}
+
+ul.main-menu {
+  display: flex;
+  list-style-type: none;
+}
+
+ul.main-menu a:hover {
+  background-color: #323f4b;
+}
+
+/* for the submenu - step one is style and postion */
+/* when using position:absolute; first make it relavtive to the parent dropdown. */
+
+.has-dropdown {
+  position: relative;
+}
+
+ul.sub-menu {
+  background-color: #b5b5b5;
+  border-radius: 0.1875rem;
+  position: absolute;
+  /* top,bottom,left, and right values are in relation to the body element, unless a parent container as position:relative applied to it. */
+  top: 85%;
+  left: 55%;
+  min-width: 125px;
+  list-style-type: none;
+  /* step 2- hide the menu with visibility and opacity(use for accessibility purposes, which is why we DON'T use display:none; for screen readers and keyboards) */
+  visibility: hidden;
+  opacity: 0;
+  transition: all 400ms ease;/* to smooth out the css change, use the transition property before the items change */
+}
+
+/* step 3- show the menu on hover -- hover over the parent li to show the child submenu */
+
+.has-dropdown:hover .sub-menu,
+.has-dropdown:focus-within .sub-menu {/* hover over parent but target the childe container */
+  visibility: visible;
+  opacity: 1;
+}
+
+ul.sub-menu a {
+  color: #1f2933;
+  padding: 0.25rem 0.5rem;
+  display: block;
+  /* note: add display: block; to your nav anchor tags to allow the padding and backgroud hovers to work */
+}
+
+ul.sub-menu a:hover {
+  background-color: #e4e7eb;
+}
